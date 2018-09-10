@@ -1,0 +1,11 @@
+main: mainPack.main
+name: DangerousNether
+version: 1.0
+author: DaddyLootly
+description: Expands the nether to be more interesting.
+commands:
+  getworldnamed:
+    description: Gets the name of the world you are in for use in config.
+    usage: /getworldnamed
+    permission: dangerc.getworldnamed
+    permission-message: You don't have the dangerc.getworldnamed permission.
