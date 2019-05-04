@@ -26,8 +26,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-//import net.minecraft.server.v1_12_R1.BlockPosition;
-//import net.minecraft.server.v1_12_R1.IBlockData;
+import net.minecraft.server.v1_12_R1.BlockPosition;
+import net.minecraft.server.v1_12_R1.IBlockData;
 
 public class NetherGenerator extends BlockPopulator {
 	
@@ -38,9 +38,9 @@ public class NetherGenerator extends BlockPopulator {
 		
 		if(rand.nextInt(main.structchance+1)==0&&main.nethstruct==true) {
 		//-1 + | 1 == random pillar or shape / boulder 2 == random skeleton skull 3 == random room with stuff or random chest 4 == monsters spawner surrounded 5 == random mineshaft / tunnel 6 == spiders nest small 7 == traps
-		//int typeC = rand.nextInt(8);
+		int typeC = rand.nextInt(8);
 			int typeC = rand.nextInt(1);
-		//sendCaveMessage(typeC);
+		sendCaveMessage(typeC);
 		int cX = chnk.getX() * 16;
 		int cZ = chnk.getZ() * 16;
 		int cXOff = cX + rand.nextInt(10);
