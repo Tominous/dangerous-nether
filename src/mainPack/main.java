@@ -118,7 +118,7 @@ public class main extends JavaPlugin implements Listener, CommandExecutor{
 	FileConfiguration config = getConfig();
 	public ConsoleCommandSender console = getServer().getConsoleSender();
 	Random randor = new Random();
-	//public World wor = null;
+	public World wor = null;
 	boolean hasWorlds = false;
 	public static List<String> worlds = new ArrayList<String>();
 	public boolean canSave = false;
@@ -358,7 +358,7 @@ public class main extends JavaPlugin implements Listener, CommandExecutor{
 		if(hasWorlds==false) {
 			ambients = config.getBoolean("Enable Ambient Sounds ");
 		}
-		//}
+		}
 	}
 	
 	@Override
@@ -681,7 +681,7 @@ public class main extends JavaPlugin implements Listener, CommandExecutor{
 	public static void removeItemNaturally(Player p) {
 		try {
 		if (p.getInventory().getItemInMainHand().getAmount() <= 1) {
-			//p.getInventory().setItemInMainHand(new ItemStack(Material.AIR));
+			p.getInventory().setItemInMainHand(new ItemStack(Material.AIR));
 			p.getInventory().getItemInMainHand().setAmount(0);
 		} else {
 			p.getInventory().getItemInMainHand().setAmount(p.getInventory().getItemInMainHand().getAmount() - 1);
@@ -889,7 +889,7 @@ public class main extends JavaPlugin implements Listener, CommandExecutor{
 
 			}
 			if (randor.nextInt(15) == 1) {
-				//Sound.valueOf("ENTITY_IRON_GOLEM_HURT")
+				Sound.valueOf("ENTITY_IRON_GOLEM_HURT")
 				try {
 				Bukkit.getScheduler().runTaskLater(this,
 						() -> p.playSound(p.getLocation(), Sound.ENTITY_IRONGOLEM_HURT, (float) 0.01, 0), 3);
@@ -1779,7 +1779,7 @@ public class main extends JavaPlugin implements Listener, CommandExecutor{
 					PotionMeta potionMeta = (PotionMeta) item.getItemMeta();
 					potionMeta.setColor(Color.YELLOW);
 					potionMeta.addCustomEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 2400, 0), true);
-					potionMeta.setDisplayName("§fPotion of Haste");
+					potionMeta.setDisplayName("Â§fPotion of Haste");
 					item.setItemMeta(potionMeta);
 					if (wor != null) {
 						wor.dropItemNaturally(event.getEntity().getLocation(), item);
@@ -1790,7 +1790,7 @@ public class main extends JavaPlugin implements Listener, CommandExecutor{
 						PotionMeta potionMeta = (PotionMeta) item.getItemMeta();
 						potionMeta.setColor(Color.YELLOW);
 						potionMeta.addCustomEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 2400, 1), true);
-						potionMeta.setDisplayName("§fPotion of Haste");
+						potionMeta.setDisplayName("Â§fPotion of Haste");
 						item.setItemMeta(potionMeta);
 						if (wor != null) {
 							wor.dropItemNaturally(event.getEntity().getLocation(), item);
@@ -1802,7 +1802,7 @@ public class main extends JavaPlugin implements Listener, CommandExecutor{
 							PotionMeta potionMeta = (PotionMeta) item.getItemMeta();
 							potionMeta.setColor(Color.YELLOW);
 							potionMeta.addCustomEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 4800, 3), true);
-							potionMeta.setDisplayName("§fPotion of Haste");
+							potionMeta.setDisplayName("Â§fPotion of Haste");
 							item.setItemMeta(potionMeta);
 							if (wor != null) {
 								wor.dropItemNaturally(event.getEntity().getLocation(), item);
@@ -1814,7 +1814,7 @@ public class main extends JavaPlugin implements Listener, CommandExecutor{
 					PotionMeta potionMeta = (PotionMeta) item.getItemMeta();
 					potionMeta.setColor(Color.YELLOW);
 					potionMeta.addCustomEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 2400, 0), true);
-					potionMeta.setDisplayName("§fLingering Potion of Haste");
+					potionMeta.setDisplayName("Â§fLingering Potion of Haste");
 					item.setItemMeta(potionMeta);
 					if (wor != null) {
 						wor.dropItemNaturally(event.getEntity().getLocation(), item);
@@ -1824,7 +1824,7 @@ public class main extends JavaPlugin implements Listener, CommandExecutor{
 					PotionMeta potionMeta = (PotionMeta) item.getItemMeta();
 					potionMeta.setColor(Color.YELLOW);
 					potionMeta.addCustomEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 2400, 0), true);
-					potionMeta.setDisplayName("§fSplash Potion of Haste");
+					potionMeta.setDisplayName("Â§fSplash Potion of Haste");
 					item.setItemMeta(potionMeta);
 					if (wor != null) {
 						wor.dropItemNaturally(event.getEntity().getLocation(), item);
@@ -1841,7 +1841,7 @@ public class main extends JavaPlugin implements Listener, CommandExecutor{
 					PotionMeta potionMeta = (PotionMeta) item.getItemMeta();
 					potionMeta.setColor(Color.BLACK);
 					potionMeta.addCustomEffect(new PotionEffect(PotionEffectType.WITHER, 1800, 0), true);
-					potionMeta.setDisplayName("§fLingering Potion of Wither");
+					potionMeta.setDisplayName("Â§fLingering Potion of Wither");
 					item.setItemMeta(potionMeta);
 					if (wor != null) {
 						wor.dropItemNaturally(event.getEntity().getLocation(), item);
@@ -1851,7 +1851,7 @@ public class main extends JavaPlugin implements Listener, CommandExecutor{
 					PotionMeta potionMeta = (PotionMeta) item.getItemMeta();
 					potionMeta.setColor(Color.BLACK);
 					potionMeta.addCustomEffect(new PotionEffect(PotionEffectType.WITHER, 1800, 0), true);
-					potionMeta.setDisplayName("§fSplash Potion of Wither");
+					potionMeta.setDisplayName("Â§fSplash Potion of Wither");
 					item.setItemMeta(potionMeta);
 					if (wor != null) {
 						wor.dropItemNaturally(event.getEntity().getLocation(), item);
@@ -1862,7 +1862,7 @@ public class main extends JavaPlugin implements Listener, CommandExecutor{
 					PotionMeta potionMeta = (PotionMeta) item.getItemMeta();
 					potionMeta.setColor(Color.BLACK);
 					potionMeta.addCustomEffect(new PotionEffect(PotionEffectType.WITHER, 1800, 1), true);
-					potionMeta.setDisplayName("§fSplash Potion of Wither");
+					potionMeta.setDisplayName("Â§fSplash Potion of Wither");
 					item.setItemMeta(potionMeta);
 					if (wor != null) {
 						wor.dropItemNaturally(event.getEntity().getLocation(), item);
@@ -1873,7 +1873,7 @@ public class main extends JavaPlugin implements Listener, CommandExecutor{
 					PotionMeta potionMeta = (PotionMeta) item.getItemMeta();
 					potionMeta.setColor(Color.BLACK);
 					potionMeta.addCustomEffect(new PotionEffect(PotionEffectType.WITHER, 1800, 1), true);
-					potionMeta.setDisplayName("§fLingering Potion of Wither");
+					potionMeta.setDisplayName("Â§fLingering Potion of Wither");
 					item.setItemMeta(potionMeta);
 					if (wor != null) {
 						wor.dropItemNaturally(event.getEntity().getLocation(), item);
